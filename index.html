@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SystemStride — Your Business Should Run Like a System</title>
+    <meta name="description"
+        content="SystemStride engineers complete business systems — websites, automation, custom applications, and mobile experiences — that move companies from manual chaos to structured, scalable growth.">
+    <meta name="theme-color" content="#2563EB">
+
+    <!-- Favicon & Webclip -->
+    <link rel="icon" type="image/x-icon" href="assets/favicons/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/webclip/webclip.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@700&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- GSAP + Plugins -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Noise Overlay -->
+    <svg class="noise-overlay" xmlns="http://www.w3.org/2000/svg">
+        <filter id="noiseFilter">
+            <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
+        </filter>
+        <rect width="100%" height="100%" filter="url(#noiseFilter)" />
+    </svg>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="customCursor"></div>
+
+    <!-- ═══════════════ NAVBAR ═══════════════ -->
+    <nav class="navbar" id="navbar">
+        <a href="#" class="navbar__logo cursor-hover" aria-label="SystemStride Home">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 180">
+                <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle"
+                    style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:120px;letter-spacing:.05em;fill:currentColor">SystemStride</text>
+            </svg>
+        </a>
+        <ul class="navbar__links">
+            <li><a href="#services" class="cursor-hover">Services</a></li>
+            <li><a href="#process" class="cursor-hover">Process</a></li>
+            <li><a href="#catalog" class="cursor-hover">Catalog</a></li>
+            <li><a href="#contact" class="cursor-hover">Contact</a></li>
+        </ul>
+        <a href="#contact" class="navbar__cta cursor-hover">Book a System Audit</a>
+    </nav>
+
+    <!-- ═══════════════ HERO ═══════════════ -->
+    <section class="hero" id="hero">
+        <div class="hero__dot-grid" id="heroDotGrid"></div>
+        <div class="hero__marquee" id="heroMarquee">
+            SYSTEMSTRIDE&nbsp;&nbsp;·&nbsp;&nbsp;SYSTEMSTRIDE&nbsp;&nbsp;·&nbsp;&nbsp;SYSTEMSTRIDE</div>
+        <div class="hero__content">
+            <div class="hero__headline">
+                <span class="hero__line1" id="heroLine1">Business runs on</span>
+                <span class="hero__line2" id="heroLine2">systems.</span>
+            </div>
+            <p class="hero__subhead" id="heroSubhead">Websites. Automation. Applications. Built to scale without chaos.
+            </p>
+            <div class="hero__cta-wrap" id="heroCta">
+                <a href="#contact" class="btn-primary cursor-hover">Book a System Audit <span>→</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════ SERVICES ═══════════════ -->
+    <section class="section" id="services">
+        <span class="section__label">What We Build</span>
+        <h2 class="section__title" id="servicesTitle">
+            <span class="clip-reveal"><span>Engineered</span></span>
+            <span class="clip-reveal"><span>systems</span></span>
+            <span class="clip-reveal"><span>that</span></span>
+            <span class="clip-reveal"><span>scale.</span></span>
+        </h2>
+        <div class="services-grid" id="servicesGrid">
+            <div class="service-card cursor-hover">
+                <div class="service-card__number">01</div>
+                <div class="service-card__title">Complete Website System</div>
+                <p class="service-card__desc">Your website should generate leads, process payments, and convert visitors
+                    automatically.</p>
+            </div>
+            <div class="service-card cursor-hover">
+                <div class="service-card__number">02</div>
+                <div class="service-card__title">Lead Generation &amp; Automation</div>
+                <p class="service-card__desc">Capture, follow up, and nurture leads 24/7 — without you lifting a finger.
+                </p>
+            </div>
+            <div class="service-card cursor-hover">
+                <div class="service-card__number">03</div>
+                <div class="service-card__title">Custom Business Applications</div>
+                <p class="service-card__desc">We build tools that fit how your business actually operates — not the
+                    other way around.</p>
+            </div>
+            <div class="service-card cursor-hover">
+                <div class="service-card__number">04</div>
+                <div class="service-card__title">Mobile Applications</div>
+                <p class="service-card__desc">A direct channel to your customers that increases engagement, loyalty, and
+                    repeat business.</p>
+            </div>
+            <div class="service-card cursor-hover">
+                <div class="service-card__number">05</div>
+                <div class="service-card__title">System Enhancements &amp; Integrations</div>
+                <p class="service-card__desc">We upgrade the systems you already have — smarter, faster, and more
+                    connected.</p>
+            </div>
+            <div class="service-card cursor-hover">
+                <div class="service-card__number">06</div>
+                <div class="service-card__title">System Audit &amp; Upgrade Blueprint</div>
+                <p class="service-card__desc">Clarity on how your business flows. A structured path to scale without
+                    chaos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════ STATS BAR ═══════════════ -->
+    <div class="stats-bar" id="statsBar">
+        <div class="stat-item">
+            <div class="stat-item__number" data-count="6">0</div>
+            <div class="stat-item__label">Service Verticals</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-item__number" data-text="24/7">0</div>
+            <div class="stat-item__label">Automated Lead Capture</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-item__number" data-text="100%">0</div>
+            <div class="stat-item__label">Custom-Built, Never Generic</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-item__number" data-count="1">0</div>
+            <div class="stat-item__label">Unified Blueprint per Client</div>
+        </div>
+    </div>
+
+    <!-- ═══════════════ PHILOSOPHY ═══════════════ -->
+    <section class="philosophy" id="philosophy">
+        <svg class="philosophy__mesh" id="meshSvg" viewBox="0 0 1200 600" preserveAspectRatio="none"></svg>
+        <div class="philosophy__neutral" id="philNeutral">
+            <span>Most agencies ask: "What do you want to build?"</span>
+        </div>
+        <div class="philosophy__power" id="philPower">
+            We ask: "How does your business <span class="accent" id="flowWord">flow</span> — and how do we optimize it?"
+        </div>
+    </section>
+
+    <!-- ═══════════════ PROCESS / PROTOCOL ═══════════════ -->
+    <section id="process">
+        <div class="process-panel" id="processPanel1">
+            <span class="process-panel__bg-number">01</span>
+            <div class="process-panel__content">
+                <div>
+                    <div class="process-panel__label">Step 01 — Audit</div>
+                    <h3 class="process-panel__title">Map the System</h3>
+                    <p class="process-panel__desc">We analyze every touchpoint — from first click to final conversion —
+                        and map where the system breaks.</p>
+                </div>
+                <div class="process-panel__visual">
+                    <svg viewBox="0 0 300 300" id="radarSvg">
+                        <circle cx="150" cy="150" r="60" fill="none" stroke="var(--color-primary)" stroke-width="1"
+                            opacity="0.15" />
+                        <circle cx="150" cy="150" r="100" fill="none" stroke="var(--color-primary)" stroke-width="1"
+                            opacity="0.1" />
+                        <circle cx="150" cy="150" r="140" fill="none" stroke="var(--color-primary)" stroke-width="0.5"
+                            opacity="0.07" />
+                        <line x1="150" y1="150" x2="150" y2="10" stroke="var(--color-primary)" stroke-width="2"
+                            opacity="0.6" id="radarArm">
+                            <animateTransform attributeName="transform" type="rotate" from="0 150 150" to="360 150 150"
+                                dur="4s" repeatCount="indefinite" />
+                        </line>
+                        <circle cx="150" cy="150" r="4" fill="var(--color-primary)" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="process-panel" id="processPanel2">
+            <span class="process-panel__bg-number">02</span>
+            <div class="process-panel__content">
+                <div>
+                    <div class="process-panel__label">Step 02 — Architect</div>
+                    <h3 class="process-panel__title">Design the Blueprint</h3>
+                    <p class="process-panel__desc">We design the system before a single line of code is written.
+                        Structure first, always.</p>
+                </div>
+                <div class="process-panel__visual">
+                    <svg viewBox="0 0 300 200" id="architectSvg">
+                        <rect x="20" y="80" width="70" height="40" rx="8" fill="none" stroke="var(--color-primary)"
+                            stroke-width="1.5" opacity="0.5" />
+                        <text x="55" y="105" text-anchor="middle" fill="var(--color-primary)" font-size="10"
+                            font-family="JetBrains Mono" opacity="0.7">Input</text>
+                        <rect x="120" y="40" width="70" height="40" rx="8" fill="none" stroke="var(--color-primary)"
+                            stroke-width="1.5" opacity="0.5" />
+                        <text x="155" y="65" text-anchor="middle" fill="var(--color-primary)" font-size="10"
+                            font-family="JetBrains Mono" opacity="0.7">Logic</text>
+                        <rect x="120" y="120" width="70" height="40" rx="8" fill="none" stroke="var(--color-primary)"
+                            stroke-width="1.5" opacity="0.5" />
+                        <text x="155" y="145" text-anchor="middle" fill="var(--color-primary)" font-size="10"
+                            font-family="JetBrains Mono" opacity="0.7">Data</text>
+                        <rect x="220" y="80" width="70" height="40" rx="8" fill="none" stroke="var(--color-primary)"
+                            stroke-width="1.5" opacity="0.5" />
+                        <text x="255" y="105" text-anchor="middle" fill="var(--color-primary)" font-size="10"
+                            font-family="JetBrains Mono" opacity="0.7">Output</text>
+                        <line x1="90" y1="100" x2="120" y2="60" stroke="var(--color-primary)" stroke-width="1"
+                            opacity="0.3" class="arch-line" />
+                        <line x1="90" y1="100" x2="120" y2="140" stroke="var(--color-primary)" stroke-width="1"
+                            opacity="0.3" class="arch-line" />
+                        <line x1="190" y1="60" x2="220" y2="100" stroke="var(--color-primary)" stroke-width="1"
+                            opacity="0.3" class="arch-line" />
+                        <line x1="190" y1="140" x2="220" y2="100" stroke="var(--color-primary)" stroke-width="1"
+                            opacity="0.3" class="arch-line" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="process-panel" id="processPanel3">
+            <span class="process-panel__bg-number">03</span>
+            <div class="process-panel__content">
+                <div>
+                    <div class="process-panel__label">Step 03 — Build</div>
+                    <h3 class="process-panel__title">Engineer the System</h3>
+                    <p class="process-panel__desc">Clean, scalable, and fast. Engineered to integrate, not isolate.</p>
+                </div>
+                <div class="process-panel__visual">
+                    <div
+                        style="background:var(--text-main);border-radius:1rem;padding:1.5rem 2rem;font-family:'JetBrains Mono',monospace;font-size:0.8rem;color:rgba(255,255,255,0.7);max-width:360px;line-height:1.8;position:relative;">
+                        <div style="display:flex;gap:6px;margin-bottom:1rem;">
+                            <span
+                                style="width:10px;height:10px;border-radius:50%;background:#ff5f57;display:inline-block;"></span>
+                            <span
+                                style="width:10px;height:10px;border-radius:50%;background:#ffbd2e;display:inline-block;"></span>
+                            <span
+                                style="width:10px;height:10px;border-radius:50%;background:#28c840;display:inline-block;"></span>
+                        </div>
+                        <div id="terminalLines">
+                            <div class="terminal-line" style="opacity:0"><span
+                                    style="color:var(--color-primary)">$</span> init system --mode production</div>
+                            <div class="terminal-line" style="opacity:0"><span style="color:#22c55e">✓</span> Database
+                                connected</div>
+                            <div class="terminal-line" style="opacity:0"><span style="color:#22c55e">✓</span> API
+                                endpoints active</div>
+                            <div class="terminal-line" style="opacity:0"><span style="color:#22c55e">✓</span> Automation
+                                flows deployed</div>
+                            <div class="terminal-line" style="opacity:0"><span
+                                    style="color:var(--color-primary)">→</span> System operational</div>
+                        </div>
+                        <span id="termCursor"
+                            style="display:inline-block;width:8px;height:16px;background:var(--color-primary);animation:blink 1s step-end infinite;vertical-align:middle;"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="process-panel" id="processPanel4">
+            <span class="process-panel__bg-number">04</span>
+            <div class="process-panel__content">
+                <div>
+                    <div class="process-panel__label">Step 04 — Scale</div>
+                    <h3 class="process-panel__title">Grow Without Limits</h3>
+                    <p class="process-panel__desc">Systems that grow with you — not systems you outgrow.</p>
+                </div>
+                <div class="process-panel__visual">
+                    <svg viewBox="0 0 300 200" id="scaleSvg">
+                        <line x1="30" y1="170" x2="30" y2="20" stroke="var(--color-primary)" stroke-width="0.5"
+                            opacity="0.2" />
+                        <line x1="30" y1="170" x2="280" y2="170" stroke="var(--color-primary)" stroke-width="0.5"
+                            opacity="0.2" />
+                        <path id="growthPath" d="M30,160 C80,155 120,140 160,110 S220,50 270,30" fill="none"
+                            stroke="var(--color-primary)" stroke-width="2.5" stroke-linecap="round" />
+                        <circle id="growthDot" cx="270" cy="30" r="5" fill="var(--color-primary)" opacity="0.8" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════ SERVICES CATALOG (Horizontal Scroll) ═══════════════ -->
+    <section class="catalog-section" id="catalog">
+        <div class="catalog__track" id="catalogTrack">
+            <div class="catalog__panel">
+                <div class="catalog__panel-inner">
+                    <div class="catalog__panel-number">01</div>
+                    <h3 class="catalog__panel-title">Complete Website System</h3>
+                    <p class="catalog__panel-quote">"Not a brochure. A revenue engine."</p>
+                    <p class="catalog__panel-body">Your website should generate leads, process payments, and convert
+                        visitors automatically. We build complete web systems that work around the clock — capturing
+                        demand, qualifying interest, and pushing prospects toward conversion without manual
+                        intervention.</p>
+                    <a href="#contact" class="catalog__panel-link cursor-hover">Learn More <span>→</span></a>
+                </div>
+            </div>
+            <div class="catalog__panel">
+                <div class="catalog__panel-inner">
+                    <div class="catalog__panel-number">02</div>
+                    <h3 class="catalog__panel-title">Lead Generation &amp; Automation</h3>
+                    <p class="catalog__panel-quote">"Your pipeline should never sleep."</p>
+                    <p class="catalog__panel-body">Capture, follow up, and nurture leads 24/7 — without you lifting a
+                        finger. From form submissions to email sequences, chatbots to CRM integrations — we automate the
+                        entire lead lifecycle so your team can focus on closing.</p>
+                    <a href="#contact" class="catalog__panel-link cursor-hover">Learn More <span>→</span></a>
+                </div>
+            </div>
+            <div class="catalog__panel">
+                <div class="catalog__panel-inner">
+                    <div class="catalog__panel-number">03</div>
+                    <h3 class="catalog__panel-title">Custom Business Applications</h3>
+                    <p class="catalog__panel-quote">"Built around your workflow, not someone else's."</p>
+                    <p class="catalog__panel-body">We build tools that fit how your business actually operates — not the
+                        other way around. From internal dashboards to client portals, inventory systems to booking
+                        engines — every application is engineered for your exact operational logic.</p>
+                    <a href="#contact" class="catalog__panel-link cursor-hover">Learn More <span>→</span></a>
+                </div>
+            </div>
+            <div class="catalog__panel">
+                <div class="catalog__panel-inner">
+                    <div class="catalog__panel-number">04</div>
+                    <h3 class="catalog__panel-title">Mobile Applications</h3>
+                    <p class="catalog__panel-quote">"Your brand, in every pocket."</p>
+                    <p class="catalog__panel-body">A direct channel to your customers that increases engagement,
+                        loyalty, and repeat business. We design and develop mobile experiences that extend your system
+                        into your customers' daily lives — native-feeling, fast, and deeply integrated.</p>
+                    <a href="#contact" class="catalog__panel-link cursor-hover">Learn More <span>→</span></a>
+                </div>
+            </div>
+            <div class="catalog__panel">
+                <div class="catalog__panel-inner">
+                    <div class="catalog__panel-number">05</div>
+                    <h3 class="catalog__panel-title">System Enhancements &amp; Integrations</h3>
+                    <p class="catalog__panel-quote">"Make what you have work harder."</p>
+                    <p class="catalog__panel-body">We upgrade the systems you already have — smarter, faster, and more
+                        connected. Whether it's syncing platforms, automating handoffs, or rebuilding bottleneck modules
+                        — we make existing infrastructure perform at a higher level.</p>
+                    <a href="#contact" class="catalog__panel-link cursor-hover">Learn More <span>→</span></a>
+                </div>
+            </div>
+            <div class="catalog__panel">
+                <div class="catalog__panel-inner">
+                    <div class="catalog__panel-number">06</div>
+                    <h3 class="catalog__panel-title">System Audit &amp; Upgrade Blueprint</h3>
+                    <p class="catalog__panel-quote">"Clarity before code."</p>
+                    <p class="catalog__panel-body">Clarity on how your business flows. A structured path to scale
+                        without chaos. We analyze your current stack, identify friction points, and deliver a
+                        prioritized blueprint — so every future investment is strategic, not reactive.</p>
+                    <a href="#contact" class="catalog__panel-link cursor-hover">Learn More <span>→</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="catalog__progress" id="catalogProgress"></div>
+    </section>
+
+    <!-- ═══════════════ CTA ═══════════════ -->
+    <section class="cta-section" id="contact">
+        <div class="cta-section__glow"></div>
+        <div class="cta-section__headline">
+            <span class="cta-section__line cta-section__line--sans"><span id="ctaLine1">Your business</span></span>
+            <span class="cta-section__line cta-section__line--serif"><span id="ctaLine2">deserves a
+                    system.</span></span>
+        </div>
+        <div class="cta-section__buttons" id="ctaButtons">
+            <a href="#" class="btn-primary cursor-hover">Book a System Audit <span>→</span></a>
+            <a href="#services" class="btn-ghost cursor-hover">View Services</a>
+        </div>
+    </section>
+
+    <!-- ═══════════════ FOOTER ═══════════════ -->
+    <footer class="footer" id="footer">
+        <div class="footer__grid">
+            <div>
+                <div class="footer__brand-name">SystemStride</div>
+                <p class="footer__brand-tagline">We don't just build websites or apps — we design and engineer complete
+                    business systems that move your operations from manual effort to structured, automated growth.</p>
+            </div>
+            <div class="footer__col">
+                <div class="footer__col-title">Navigate</div>
+                <a href="#hero" class="cursor-hover">Home</a>
+                <a href="#services" class="cursor-hover">Services</a>
+                <a href="#process" class="cursor-hover">Process</a>
+                <a href="#catalog" class="cursor-hover">Catalog</a>
+                <a href="#contact" class="cursor-hover">Contact</a>
+            </div>
+            <div class="footer__col">
+                <div class="footer__col-title">Services</div>
+                <a href="#" class="cursor-hover">Website Systems</a>
+                <a href="#" class="cursor-hover">Lead Automation</a>
+                <a href="#" class="cursor-hover">Custom Apps</a>
+                <a href="#" class="cursor-hover">Mobile Apps</a>
+                <a href="#" class="cursor-hover">Integrations</a>
+                <a href="#" class="cursor-hover">System Audit</a>
+            </div>
+            <div class="footer__col">
+                <div class="footer__col-title">Legal</div>
+                <a href="#" class="cursor-hover">Privacy Policy</a>
+                <a href="#" class="cursor-hover">Terms of Service</a>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="footer__status">
+                <span class="footer__status-dot"></span>
+                <span>System Operational</span>
+            </div>
+            <div class="footer__copy">&copy; 2026 SystemStride. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <!-- ═══════════════ JAVASCRIPT ═══════════════ -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
