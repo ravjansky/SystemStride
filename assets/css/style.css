@@ -130,7 +130,7 @@ button { border: none; background: none; font-family: inherit; cursor: none; }
 }
 
 /* On dark hero, flip the logo text white */
-.navbar.hero-dark .navbar__logo svg text { fill: rgba(13, 255, 0, 0.904); }
+.navbar.hero-dark .navbar__logo svg text { fill: #fff; }
 .navbar.hero-dark .navbar__links a { color: rgba(255,255,255,0.75); }
 .navbar.hero-dark .navbar__links a:hover { color: #fff; }
 
