@@ -523,15 +523,7 @@ button { border: none; background: none; font-family: inherit; cursor: none; }
   50%       { transform: scaleY(0.65); opacity: 1; }
 }
 
-/* ── Ghost light variant (for dark hero) ── */
-.btn-ghost--light {
-  color: #fff;
-  border-color: rgba(255,255,255,0.25);
-}
-.btn-ghost--light:hover {
-  border-color: rgba(255,255,255,0.6);
-  color: #fff;
-}
+
 
 /* ════════════════════════════════════════
    BUTTONS
@@ -568,6 +560,19 @@ button { border: none; background: none; font-family: inherit; cursor: none; }
   transition: transform 0.35s var(--ease-signature), border-color 0.35s var(--ease-smooth);
 }
 .btn-ghost:hover { transform: scale(1.03); border-color: var(--color-primary); }
+
+/* ── Ghost light variant (for dark hero) ── */
+.btn-ghost--light {
+  color: #fff;
+  border-color: rgba(255,255,255,0.25);
+  transition: transform 0.35s var(--ease-signature), border-color 0.35s var(--ease-smooth), background 0.35s var(--ease-smooth);
+}
+.btn-ghost--light:hover {
+  border-color: rgba(255,255,255,0.6);
+  color: #fff;
+  background: rgba(37, 99, 235, 0.15);
+  transform: scale(1.03);
+}
 
 /* ════════════════════════════════════════
    SECTIONS — Common
