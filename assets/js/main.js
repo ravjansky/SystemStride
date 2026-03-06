@@ -71,6 +71,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const navbar = document.getElementById('navbar');
 
+  navbar.classList.add('hero-dark');
+
   // Navbar starts at margin-top: -120px via CSS, opacity: 0
   // We animate margin-top → 0 and opacity → 1
   // This preserves the translateX(-50%) centering completely.
@@ -89,6 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const heroChips   = document.getElementById('heroChips');
   const heroScrollHint = document.getElementById('heroScrollHint');
   const bgRipple    = document.getElementById('bgRipple');
+  const heroMeta = document.getElementById('heroMeta');
 
   const intro = gsap.timeline({ defaults: { ease: 'sig' } });
 
@@ -128,7 +131,10 @@ document.addEventListener('DOMContentLoaded', () => {
     .to(bgRipple, { opacity: 1, duration: 1.4, ease: 'smo' }, '-=0.6')
 
     // Scroll hint appears last
-    .to(heroScrollHint, { opacity: 0.5, duration: 0.8, ease: 'flt' }, '-=0.3');
+    .to(heroScrollHint, { opacity: 0.5, duration: 0.8, ease: 'flt' }, '-=0.3')
+
+    // Meta cluster — last, quietest, just confirms operational status
+    .to(heroMeta,       { x: 0, opacity: 1, duration: 0.8, ease: 'flt' }, '-=0.4');
 
   /* ══════════════════════════════════════════
      5. NAVBAR — Scroll behavior
@@ -210,6 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
       scrub: 1.5,
     }
   });
+
 
   /* ══════════════════════════════════════════
      7. SERVICES SECTION
@@ -588,9 +595,10 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.set([
       heroLine1, heroLine2, heroSubhead, heroCta, heroEyebrow,
       navbar, bgRipple, '.hero__bg-img', '.hero__chips',
+      '.hero__divider-rule', '#heroMeta', '.hero__grid',
       '.service-card', statsBar, '.gallery-cell',
       '#footer', '#ctaButtons', '#ctaSub',
-    ], { opacity: 1, y: 0, x: 0, scale: 1, filter: 'none', marginTop: 0 });
+    ], { opacity: 1, y: 0, x: 0, scale: 1, scaleX: 1, filter: 'none', marginTop: 0 });
   }
 
 });

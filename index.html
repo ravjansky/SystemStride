@@ -99,7 +99,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 180" role="img" aria-label="SystemStride">
                 <title>SystemStride</title>
                 <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle"
-                    style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:120px;letter-spacing:.05em;fill:currentColor">SystemStride</text>
+                    style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:120px;letter-spacing:.01em;fill:currentColor">SystemStride</text>
             </svg>
         </a>
         <ul class="navbar__links" role="list">
@@ -112,6 +112,7 @@
     </nav>
 
     <!-- ═══════════════ HERO ═══════════════ -->
+
     <section class="hero" id="hero" aria-label="Hero — Lead Generation Infrastructure">
 
         <!-- Background image — GSAP zooms this in on scroll -->
@@ -128,10 +129,15 @@
         </div>
 
         <!-- Multi-layer gradient overlays for depth -->
-        <div class="hero__overlay"        aria-hidden="true"></div>
-        <div class="hero__overlay-vignette" aria-hidden="true"></div>
+        <div class="hero__overlay"             aria-hidden="true"></div>
+        <div class="hero__overlay-vignette"    aria-hidden="true"></div>
+        <!-- NEW: Top-edge darkening so navbar doesn't fight the image -->
+        <div class="hero__overlay-top"         aria-hidden="true"></div>
 
-        <!-- Subtle ripple circles — white tint on dark bg -->
+        <!-- NEW: Subtle perspective grid — depth plane on the floor of the scene -->
+        <div class="hero__grid"                aria-hidden="true"></div>
+
+        <!-- Subtle ripple circles -->
         <div class="bg-ripple" id="bgRipple" aria-hidden="true">
             <div class="ripple-circle ripple-small  ripple-shade1"></div>
             <div class="ripple-circle ripple-medium ripple-shade2"></div>
@@ -140,7 +146,19 @@
             <div class="ripple-circle ripple-xxlarge ripple-shade5"></div>
         </div>
 
-        <!-- Hero content block — positioned bottom-left, cinematic -->
+        <!-- NEW: Top-right metadata cluster — information density, signals LIVE operation -->
+        <div class="hero__meta" id="heroMeta" aria-hidden="true">
+            <div class="hero__meta-item">
+                <span class="hero__meta-dot"></span>
+                Pipeline: Active
+            </div>
+            <div class="hero__meta-sep"></div>
+            <div class="hero__meta-item">24/7 Operation</div>
+            <div class="hero__meta-sep"></div>
+            <div class="hero__meta-item">Leads: Live</div>
+        </div>
+
+        <!-- Hero content block — bottom-left, cinematic -->
         <div class="hero__content">
 
             <!-- Eyebrow pill -->
@@ -154,6 +172,9 @@
                 <span class="hero__line1" id="heroLine1">Stop hunting.</span>
                 <span class="hero__line2" id="heroLine2">Start receiving.</span>
             </div>
+
+            <!-- NEW: Structural divider — anchors the headline block, separates intent from proof -->
+            <div class="hero__divider-rule" aria-hidden="true"></div>
 
             <!-- Subhead -->
             <p class="hero__subhead" id="heroSubhead">

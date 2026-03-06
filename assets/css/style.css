@@ -130,7 +130,7 @@ button { border: none; background: none; font-family: inherit; cursor: none; }
 }
 
 /* On dark hero, flip the logo text white */
-.navbar.hero-dark .navbar__logo svg text { fill: #fff; }
+.navbar.hero-dark .navbar__logo svg text { fill: rgba(13, 255, 0, 0.904); }
 .navbar.hero-dark .navbar__links a { color: rgba(255,255,255,0.75); }
 .navbar.hero-dark .navbar__links a:hover { color: #fff; }
 
@@ -174,10 +174,85 @@ button { border: none; background: none; font-family: inherit; cursor: none; }
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 0 clamp(2rem, 5vw, 6rem);
-  padding-bottom: clamp(5rem, 10vh, 9rem);
+  padding: clamp(7rem, 12vh, 10rem) clamp(2.5rem, 5.5vw, 7rem);
+  padding-bottom: clamp(6rem, 12vh, 10rem);
   overflow: hidden;
-  background: var(--text-main); /* fallback before image loads */
+  background: var(--text-main);
+}
+
+.hero__overlay-top {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 220px;
+  z-index: 2;
+  background: linear-gradient(to bottom, rgba(8, 12, 28, 0.72), transparent);
+  pointer-events: none;
+}
+
+.hero__grid {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(59, 130, 246, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.04) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.15) 35%,
+    transparent 65%
+  );
+  -webkit-mask-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.15) 35%,
+    transparent 65%
+  );
+}
+
+.hero__meta {
+  position: absolute;
+  top: clamp(6.5rem, 11vh, 8.5rem);
+  right: clamp(2.5rem, 5.5vw, 7rem);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.35rem;
+  z-index: 5;
+  opacity: 0;
+  transform: translateX(24px);
+}
+
+.hero__meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.hero__meta-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #22c55e;
+  flex-shrink: 0;
+  animation: pulse-dot 2.4s var(--ease-float) infinite;
+}
+
+/* Thin diagonal separator between meta items */
+.hero__meta-sep {
+  width: 1px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  align-self: flex-end;
+  margin-right: 0.15rem;
+  transform: rotate(20deg);
 }
 
 /* Background image container — GSAP scales the img inside */
@@ -203,11 +278,13 @@ button { border: none; background: none; font-family: inherit; cursor: none; }
   inset: 0;
   z-index: 1;
   background:
+    /* Left-heavy dark for legibility of content block */
     linear-gradient(
-      to right,
-      rgba(10, 15, 30, 0.88) 0%,
-      rgba(10, 15, 30, 0.65) 50%,
-      rgba(10, 15, 30, 0.30) 100%
+      105deg,
+      rgba(8, 12, 28, 0.92) 0%,
+      rgba(8, 12, 28, 0.70) 42%,
+      rgba(8, 12, 28, 0.22) 75%,
+      rgba(8, 12, 28, 0.08) 100%
     );
 }
 
@@ -269,7 +346,39 @@ button { border: none; background: none; font-family: inherit; cursor: none; }
 .hero__content {
   position: relative;
   z-index: 4;
-  max-width: 780px;
+  max-width: 800px;
+  padding-left: 2.5rem;
+}
+
+.hero__content::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.25rem;
+  bottom: 0.25rem;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(37, 99, 235, 0.6) 20%,
+    rgba(59, 130, 246, 0.9) 50%,
+    rgba(129, 140, 248, 0.4) 80%,
+    transparent 100%
+  );
+  border-radius: 2px;
+}
+
+.hero__divider-rule {
+  width: clamp(48px, 6vw, 96px);
+  height: 1.5px;
+  background: linear-gradient(
+    to right,
+    rgba(37, 99, 235, 0.7),
+    rgba(59, 130, 246, 0.3),
+    transparent
+  );
+  margin: 1.75rem 0 1.75rem 0;
+  border-radius: 2px;
 }
 
 /* Eyebrow pill */
@@ -322,6 +431,7 @@ button { border: none; background: none; font-family: inherit; cursor: none; }
   font-size: var(--text-hero);
   color: var(--color-accent);
   line-height: 0.95;
+  letter-spacing: -0.02em;
   display: block;
   opacity: 0;
   transform: translateY(55px);
@@ -330,17 +440,17 @@ button { border: none; background: none; font-family: inherit; cursor: none; }
 /* Subhead */
 .hero__subhead {
   font-size: var(--text-lg);
-  color: rgba(255,255,255,0.62);
-  margin-top: 1.6rem;
+  color: rgba(255, 255, 255, 0.58);
+  margin-top: 0;
   max-width: 52ch;
-  line-height: 1.65;
+  line-height: 1.68;
   opacity: 0;
   transform: translateY(35px);
 }
 
 /* CTA row */
 .hero__cta-wrap {
-  margin-top: 2.5rem;
+  margin-top: 2.8rem;
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
@@ -415,7 +525,7 @@ button { border: none; background: none; font-family: inherit; cursor: none; }
 
 /* ── Ghost light variant (for dark hero) ── */
 .btn-ghost--light {
-  color: rgba(255,255,255,0.85);
+  color: #fff;
   border-color: rgba(255,255,255,0.25);
 }
 .btn-ghost--light:hover {
